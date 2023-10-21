@@ -1,6 +1,6 @@
-import configparser
-import json
 from flask import Flask, jsonify
+import json
+import configparser
 
 app = Flask(__name__)
 
@@ -10,8 +10,8 @@ def configuration(file):
     
     data = {}
     
-    for section in config.sections():
-        data[section] = {key: value for key, value in config.items(section)}
+    for part in config.sections():
+        data[part] = {key: value for key, value in config.items(part)}
     
     return data
 @app.route('/', methods=['GET'])
@@ -20,7 +20,7 @@ def fetch_data():
         data = configuration('config_details.ini')
         return jsonify(data)
     except FileNotFoundError:
-        return "Configuration file not found"
+        return "File not present"
     except Exception as e:
         return f"Error: {str(e)}"
 

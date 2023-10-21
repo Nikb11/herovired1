@@ -1,7 +1,6 @@
 import psutil
 
 threshold = 80
-
 print("Monitoring CPU usage...")
 
 try:
@@ -12,4 +11,4 @@ try:
 except KeyboardInterrupt:
     print("CPU Monitoring stopped.")
 except Exception as e:
-    print(f"An error occurred: {str(e)}")
+    print(f"error occurred: {str(e)}")

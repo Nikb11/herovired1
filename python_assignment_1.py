@@ -22,9 +22,9 @@ def check_password_strength(password):
 def main():
     password = input("Enter your password: ")
     if check_password_strength(password):
-        print("Password is strong and meets all criteria.")
+        print("Password is strong")
     else:   
-        print("Password is weak and does not meet the criteria.")
+        print("Password is weak")
 
 if __name__ == "__main__":
     main()
